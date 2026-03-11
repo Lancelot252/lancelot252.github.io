@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyPortfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#projects">项目经验</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首页介绍 (Hero Section) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>你好，我是 <span class="highlight">[你的名字]</span></h1>
+                <p>一名前端开发者 / 软件工程师 / 创作者</p>
+                <a href="#projects" class="btn primary-btn">查看我的作品</a>
+            </div>
+        </section>
+
+        <!-- 关于我 -->
+        <section id="about" class="section">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <p>在这里写一段关于你的简介。例如：我热爱编程与设计，对构建高性能的用户界面充满热情。熟悉 HTML, CSS, JavaScript 以及常用的前端框架，拥有丰富的项目开发经验。</p>
+                <ul class="skills-list">
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript / TypeScript</li>
+                    <li>React / Vue</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 项目展示 -->
+        <section id="projects" class="section bg-light">
+            <h2>项目经验</h2>
+            <div class="project-grid">
+                <!-- 项目卡片 1 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>项目名称 1</h3>
+                        <p>这是一个极简的个人博客系统，支持Markdown编写和分类管理。</p>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                        <a href="#" class="project-link">查看详情</a>
+                    </div>
+                </div>
+                <!-- 项目卡片 2 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>项目名称 2</h3>
+                        <p>这是一个响应式电商网站的前端界面，包含完善的交互动画。</p>
+                        <div class="tags">
+                            <span>Vue</span>
+                            <span>CSS3</span>
+                        </div>
+                        <a href="#" class="project-link">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="section">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <p>如果你有任何合作意向或仅仅想打个招呼，随时欢迎联系我！</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-item">✉️ your.email@example.com</a>
+                    <a href="https://github.com/lancelot25252" target="_blank" class="contact-item">🐙 GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 [你的名字]. 保留所有权利。</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
