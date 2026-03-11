@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybar - 深入了解</title>
+    <!-- 复用主页相同的样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 针对二级页面的特定微调 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .feature-card {
+            background: #111111;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .feature-card.light {
+            background: #fbfbfd;
+            color: #1d1d1f;
+            border: 1px solid #e5e5e5;
+        }
+        .feature-card h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .feature-card p {
+            color: #86868b;
+            font-size: 17px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .feature-card.light p {
+            color: #555;
+        }
+        .btn-fill {
+            background: var(--link-color); 
+            color: #fff !important; 
+            padding: 12px 24px; 
+            border-radius: 24px; 
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+        .btn-fill:hover {
+            text-decoration: none !important;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-list { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 同样复用全局导航栏 -->
+    <nav class="global-nav">
+        <div class="global-nav-content">
+            <a href="index.html" class="logo"> Lancelot</a>
+            <ul class="nav-list">
+                <li><a href="index.html#flagship">返回主页</a></li>
+                <li><a href="https://cybar.app" target="_blank">Cybar 官网</a></li>
+                <li><a href="https://github.com/lancelot25252/Cybar-2" target="_blank">GitHub 源码</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 引言部分 (Hero Section) -->
+        <section class="module hero-dark" style="min-height: 85vh; justify-content: center; padding-top: 80px;">
+            <div class="module-content">
+                <h2 class="headline" style="font-size: 64px;">Cybar</h2>
+                <h3 class="subhead">智能调酒，准确入微。</h3>
+                <p class="description">
+                    Cybar 是一款重新定义调酒体验的现代化 Web 应用。它摒弃了传统繁杂的记录方式，<br>
+                    将多成分酒精计算、AI 智能推荐和配方管理完美融合在极简的界面之下。
+                </p>
+                <div class="cta-links" style="margin-top: 40px;">
+                    <a href="https://cybar.app" target="_blank" class="btn-fill">立刻访问应用 &gt;</a>
+                </div>
+            </div>
+            <div class="module-image-wrapper">
+                <!-- 预留主展示图截图位 -->
+                <img src="https://via.placeholder.com/1000x500/000000/FFFFFF?text=Cybar+Web+Interface" alt="Cybar App Overview">
+            </div>
+        </section>
+
+        <!-- 核心功能区域 -->
+        <section class="module hero-dark" style="min-height: auto; padding: 80px 0;">
+            <h2 class="headline" style="font-size: 44px; margin-bottom: 10px;">不可思议的强大特性。</h2>
+            <p class="description">为专业调酒师及爱好者量身定制</p>
+            
+            <div class="feature-grid">
+                <!-- 特性1：ABV --->
+                <div class="feature-card">
+                    <h3>🧮 专业 ABV 计算器</h3>
+                    <p>专为精细配方开发设计。深度支持多成分复杂混合饮料的精准酒精度 (ABV) 计算。无论是简单的金汤力，还是复杂的多层鸡尾酒，数据一目了然。</p>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <!-- 预留功能模块截图位 -->
+                        <img src="https://via.placeholder.com/400x250/222222/DDDDDD?text=ABV+Calculation+Screen" alt="ABV Caclulator" style="width:100%; border-radius:12px; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- 特性2: Deepseek AI -->
+                <div class="feature-card">
+                    <h3>🤖 AI 智能推荐引擎</h3>
+                    <p>告别灵感枯竭。系统深度集成了 Deepseek 大语言模型 API，只需输入你当前拥有的原料库存，AI 就能为你快速规划出最完美的特调鸡尾酒配方。</p>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <!-- 预留功能模块截图位 -->
+                        <img src="https://via.placeholder.com/400x250/222222/DDDDDD?text=Deepseek+AI+Response" alt="AI Feature" style="width:100%; border-radius:12px; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- 特性3: 配方管理 -->
+                <div class="feature-card light">
+                    <h3>🍷 私人配方储备</h3>
+                    <p>建立你的数字化酒架。高效归档你的个人原创配方以及经典酒谱。配合现代化的直观排版，只需轻点几下即可查找分类与修改参数。</p>
+                </div>
+
+                <!-- 特性4: 技术架构 -->
+                <div class="feature-card light">
+                    <h3>⚡️ 现代全栈技术</h3>
+                    <p>由 Node.js 与 Express 稳健驱动。不仅提供了快速流畅的访问体验，更专门针对不同的设备终端 (桌面端 / 移动端) 进行了完全的响应式优化布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部 Call to action -->
+        <section class="module hero-light" style="min-height: 40vh; justify-content: center; border-top: 1px solid #eee;">
+            <div class="module-content">
+                <h2 class="headline" style="font-size: 40px;">开始你的专属创作。</h2>
+                <div class="cta-links" style="margin-top: 30px; gap: 30px; align-items: center;">
+                    <a href="https://cybar.app" target="_blank" class="btn-fill">前往 Cybar.app &gt;</a>
+                    <a href="https://github.com/lancelot25252/Cybar-2" target="_blank" style="color: #1d1d1f; font-weight: 500;">查阅 GitHub 源代码 &gt;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 简化版页脚 -->
+    <footer style="text-align: center; padding: 30px; font-size: 12px; color: #86868b; background: #f5f5f7;">
+        <p>Copyright &copy; 2026 Lancelot. 保留所有权利。</p>
+    </footer>
+</body>
+</html>
