@@ -1,93 +1,164 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>Lancelot - 个人主页</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">MyPortfolio</div>
-            <ul class="nav-links">
+    <!-- 苹果风格的深色磨砂导航栏 -->
+    <nav class="global-nav">
+        <div class="global-nav-content">
+            <a href="#" class="logo"> Lancelot</a>
+            <ul class="nav-list">
+                <li><a href="#flagship">旗舰项目</a></li>
                 <li><a href="#about">关于我</a></li>
-                <li><a href="#projects">项目经验</a></li>
-                <li><a href="#contact">联系方式</a></li>
+                <li><a href="#more-projects">更多作品</a></li>
+                <li><a href="#contact">联系支持</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
-        <!-- 首页介绍 (Hero Section) -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1>你好，我是 <span class="highlight">[你的名字]</span></h1>
-                <p>一名前端开发者 / 软件工程师 / 创作者</p>
-                <a href="#projects" class="btn primary-btn">查看我的作品</a>
-            </div>
-        </section>
-
-        <!-- 关于我 -->
-        <section id="about" class="section">
-            <h2>关于我</h2>
-            <div class="about-content">
-                <p>在这里写一段关于你的简介。例如：我热爱编程与设计，对构建高性能的用户界面充满热情。熟悉 HTML, CSS, JavaScript 以及常用的前端框架，拥有丰富的项目开发经验。</p>
-                <ul class="skills-list">
-                    <li>HTML5 / CSS3</li>
-                    <li>JavaScript / TypeScript</li>
-                    <li>React / Vue</li>
-                    <li>Node.js</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 项目展示 -->
-        <section id="projects" class="section bg-light">
-            <h2>项目经验</h2>
-            <div class="project-grid">
-                <!-- 项目卡片 1 -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>项目名称 1</h3>
-                        <p>这是一个极简的个人博客系统，支持Markdown编写和分类管理。</p>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                        </div>
-                        <a href="#" class="project-link">查看详情</a>
-                    </div>
-                </div>
-                <!-- 项目卡片 2 -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>项目名称 2</h3>
-                        <p>这是一个响应式电商网站的前端界面，包含完善的交互动画。</p>
-                        <div class="tags">
-                            <span>Vue</span>
-                            <span>CSS3</span>
-                        </div>
-                        <a href="#" class="project-link">查看详情</a>
-                    </div>
+        <!-- 旗舰项目 (大尺寸展示，黑底，类似 iPhone Pro 展示) -->
+        <section id="flagship" class="module hero-dark">
+            <div class="module-content">
+                <h2 class="headline">Project Alpha Pro</h2>
+                <h3 class="subhead">强得不可思议。前端与后端的完美融合。</h3>
+                <div class="cta-links">
+                    <a href="#">进一步了解 &gt;</a>
+                    <a href="#">查看源码 &gt;</a>
                 </div>
             </div>
+            <div class="module-image-wrapper">
+                <!-- 占位图 -->
+                <img src="https://via.placeholder.com/1200x600/000000/FFFFFF?text=Project+Alpha+Interface" alt="Project Alpha">
+            </div>
         </section>
 
-        <!-- 联系方式 -->
-        <section id="contact" class="section">
-            <h2>联系方式</h2>
-            <div class="contact-info">
-                <p>如果你有任何合作意向或仅仅想打个招呼，随时欢迎联系我！</p>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-item">✉️ your.email@example.com</a>
-                    <a href="https://github.com/lancelot25252" target="_blank" class="contact-item">🐙 GitHub</a>
+        <!-- 关于我 (大尺寸展示，白底，类似 MacBook Air/芯片 展示) -->
+        <section id="about" class="module hero-light">
+            <div class="module-content">
+                <h2 class="headline">关于开发者</h2>
+                <h3 class="subhead">热爱极简设计，专注极致性能。</h3>
+                <p class="description">熟悉 React, Vue, Node.js 等全栈技术。让每一行代码都如艺术品般优雅。</p>
+                <div class="cta-links">
+                    <a href="#">阅读我的简历 &gt;</a>
+                </div>
+            </div>
+            <div class="module-image-wrapper">
+                <img src="https://via.placeholder.com/1200x500/F5F5F7/333333?text=Developer+Working+Setup" alt="Developer Setup">
+            </div>
+        </section>
+
+        <!-- 其他项目网格 (两列网格，类似 iPad / Apple Watch 等副产品展示) -->
+        <section id="more-projects" class="module-grid">
+            <!-- 项目 A -->
+            <div class="grid-item item-dark">
+                <div class="item-content">
+                    <h4 class="item-headline">React Blog OS</h4>
+                    <p class="item-subhead">轻量，快速，Markdown 支持。</p>
+                    <div class="cta-links">
+                        <a href="#">在线预览 &gt;</a>
+                        <a href="#">GitHub &gt;</a>
+                    </div>
+                </div>
+                <div class="item-image-wrapper">
+                    <img src="https://via.placeholder.com/600x400/111111/FFFFFF?text=React+Blog+OS" alt="React Blog">
+                </div>
+            </div>
+
+            <!-- 项目 B -->
+            <div class="grid-item item-light">
+                <div class="item-content">
+                    <h4 class="item-headline">Vue Dashboard</h4>
+                    <p class="item-subhead">一切数据，尽在掌握。</p>
+                    <div class="cta-links">
+                        <a href="#">探索功能 &gt;</a>
+                    </div>
+                </div>
+                <div class="item-image-wrapper">
+                    <img src="https://via.placeholder.com/600x400/FAFAFA/111111?text=Vue+Dashboard" alt="Vue Dashboard">
+                </div>
+            </div>
+
+            <!-- 项目 C -->
+            <div class="grid-item item-light">
+                <div class="item-content">
+                    <h4 class="item-headline">Node CLI Tool</h4>
+                    <p class="item-subhead">终端里的生产力巨兽。</p>
+                    <div class="cta-links">
+                        <a href="#">获取文档 &gt;</a>
+                    </div>
+                </div>
+                <div class="item-image-wrapper">
+                    <img src="https://via.placeholder.com/600x400/FAFAFA/111111?text=Terminal+Screenshot" alt="Node CLI">
+                </div>
+            </div>
+
+            <!-- 联系方式 -->
+            <div id="contact" class="grid-item item-dark">
+                <div class="item-content">
+                    <h4 class="item-headline">准备好合作了吗？</h4>
+                    <p class="item-subhead">开启我们共同构建的下一个伟大项目。</p>
+                    <div class="cta-links">
+                        <a href="mailto:your@email.com">发一封邮件 &gt;</a>
+                        <a href="https://github.com/lancelot25252">关注我的 GitHub &gt;</a>
+                    </div>
+                </div>
+                <div class="item-image-wrapper">
+                    <img src="https://via.placeholder.com/600x400/111111/FFFFFF?text=Contact+Network" alt="Contact">
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 [你的名字]. 保留所有权利。</p>
+    <!-- 模仿苹果官网样式的页脚 -->
+    <footer class="global-footer">
+        <div class="footer-content">
+            <p class="footer-notes">
+                * 本网站的所有展示项目均为个人独立开发或参与开源贡献。<br>
+                * 界面灵感来自于 Apple (中国) 官方网站。仅用于个人能力展示，无任何商业用途。
+            </p>
+            <div class="footer-directory">
+                <div class="footer-column">
+                    <h3>项目矩阵</h3>
+                    <ul>
+                        <li><a href="#">全栈应用</a></li>
+                        <li><a href="#">前端组件库</a></li>
+                        <li><a href="#">后端微服务</a></li>
+                        <li><a href="#">UI 设计稿</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>技术栈</h3>
+                    <ul>
+                        <li><a href="#">JavaScript / TypeScript</a></li>
+                        <li><a href="#">React / Next.js</a></li>
+                        <li><a href="#">Vue / Nuxt.js</a></li>
+                        <li><a href="#">Node.js / Python</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>社交与联系</h3>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">掘金</a></li>
+                        <li><a href="#">知乎</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Lancelot. 保留所有权利。</p>
+                <ul class="footer-legal-links">
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">使用条款</a></li>
+                    <li><a href="#">站点地图</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
