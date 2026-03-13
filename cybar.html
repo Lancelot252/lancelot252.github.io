@@ -62,7 +62,7 @@
 
         /* 左右图文布局 */
         .showcase-section {
-            padding: 150px 20px;
+            padding: 120px 20px;
             display: flex;
             justify-content: center;
         }
@@ -91,6 +91,16 @@
             flex: 1;
         }
 
+        .showcase-header-tag {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #2997ff;
+            margin-bottom: 15px;
+            display: block;
+        }
+
         .showcase-text h3 {
             font-size: 48px;
             font-weight: 600;
@@ -99,9 +109,33 @@
         }
 
         .showcase-text p {
-            font-size: 21px;
-            line-height: 1.5;
+            font-size: 19px;
+            line-height: 1.6;
             color: #86868b;
+            margin-bottom: 20px;
+        }
+        
+        .showcase-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .showcase-text ul li {
+            font-size: 17px;
+            color: #86868b;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .showcase-text ul li::before {
+            content: "";
+            color: #2997ff;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -4px;
         }
 
         .showcase-visual {
@@ -112,13 +146,40 @@
 
         .showcase-visual img {
             width: 100%;
-            max-width: 500px;
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
 
         .showcase-section.dark .showcase-visual img {
             box-shadow: 0 20px 40px rgba(255,255,255,0.05);
+        }
+
+        /* 强调功能块 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+        .feature-box {
+            background: #111;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: left;
+        }
+        .feature-box h4 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .feature-box p {
+            color: #86868b;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .btn-fill {
@@ -147,10 +208,11 @@
                 gap: 50px;
             }
             .showcase-text h3 { font-size: 36px; }
+            .showcase-text ul li { text-align: left; }
         }
     </style>
 </head>
-<body style="background: #000;"> <!-- 默认深色底保证滚动沉浸感 -->
+<body style="background: #000;">
 
     <!-- 全局导航栏 -->
     <nav class="global-nav">
@@ -165,60 +227,156 @@
     </nav>
 
     <main>
-        <!-- 第一屏：极具冲击力的 Hero -->
+        <!-- 引言 Hero -->
         <section class="mega-hero reveal">
             <h2 class="mega-headline">Cybar</h2>
             <h3 class="subhead">调酒，进入智能世代。</h3>
-            <div class="cta-links" style="margin-top: 10px;">
+            <p style="color:#86868b; font-size:18px; max-width:600px; margin:-20px auto 40px; line-height: 1.5;">
+                由现代架构驱动的专业酒谱平台。深度整合 AI 推荐、多成分精准测算与 3D 实验室视觉，打造数字调酒新标准。
+            </p>
+            <div class="cta-links">
                 <a href="https://cybar.app" target="_blank" class="btn-fill">立刻探索应用</a>
             </div>
             <div class="mega-image reveal" style="transition-delay: 0.2s;">
-                <!-- 首屏全尺寸占位图 -->
-                <img src="https://via.placeholder.com/1200x600/111111/EEEEEE?text=Cybar+Web+Interface" alt="Cybar 界面概览">
+                <img src="figs/Cybar_Mega_Hero.png" onerror="this.src='https://via.placeholder.com/1200x600/111111/EEEEEE?text=Cybar+Web+Interface'" alt="Cybar 界面概览">
             </div>
         </section>
 
-        <!-- 第二屏：专业 ABV 计算（黑底） -->
+        <!-- 板块 1：专业 ABV 计算器（黑底） -->
         <section class="showcase-section dark">
             <div class="showcase-content reveal">
                 <div class="showcase-text">
+                    <span class="showcase-header-tag">专业测算引擎</span>
                     <h3>精打细算。<br>精确到每一滴。</h3>
-                    <p>真正的 Pro 级 ABV (酒精度) 计算器。告别粗略的估算，Cybar 深度支持多成分、复杂混合饮料的精准酒精度计算。无论是双成分的极简调酒，还是挑战多层风味的深度特调，数据一目了然。为专业配方研发提供绝对可靠的数字支撑。</p>
+                    <p>真正的 Pro 级 ABV (酒精度) 计算器。为专业配方研发与高端调酒提供绝对可靠的数据支撑告别粗略的估算。</p>
+                    <ul>
+                        <li><strong>多成分混合计算</strong>：支持添加无限多种原料成分，动态匹配各种密度与度数。</li>
+                        <li><strong>实时数据反馈</strong>：输入毫升或盎司后即时显示计算结果，前端即刷即切。</li>
+                    </ul>
                 </div>
                 <div class="showcase-visual">
-                    <img src="https://via.placeholder.com/600x800/1C1C1E/FFFFFF?text=ABV+Calculation+Screen" alt="ABV 功能展示">
+                    <img src="figs/ABV_Calculator.png" onerror="this.src='https://via.placeholder.com/600x600/1C1C1E/FFFFFF?text=ABV+Calculator+Engine'" alt="ABV 功能展示">
                 </div>
             </div>
         </section>
 
-        <!-- 第三屏：AI 推荐（白底） -->
+        <!-- 板块 2：自定义配方生成器（白底） -->
         <section class="showcase-section light">
             <div class="showcase-content reverse reveal">
                 <div class="showcase-text">
-                    <h3>灵感。<br>随时为你启程。</h3>
-                    <p>强大的 AI 引擎，懂酒，更懂你。Cybar 深度集成了 Deepseek 大语言模型 API，只需输入你当前拥有的原料库存，AI 就能在瞬间为你生成绝佳的专属配方。不再为缺少某样基酒而烦恼，每一次混合，都是一次不可思议的创造。</p>
+                    <span class="showcase-header-tag">数字配方工坊</span>
+                    <h3>看得见的灵感，<br>触手可及。</h3>
+                    <p>在你的屏幕上打造属于你自己的特调。我们构建了一个可视化的配方创建器，让你在创造饮品时犹如在真实的实验室中工作。</p>
+                    <ul>
+                        <li><strong>可视化原料架</strong>：直观的分类标签和极速搜索库，涵盖基酒、利口酒、果汁和苦精等百种原料。</li>
+                        <li><strong>配方即刻保存</strong>：实时酒精度测算，满意后直接一键存档至个人云端档案。</li>
+                    </ul>
                 </div>
                 <div class="showcase-visual">
-                    <img src="https://via.placeholder.com/600x800/F5F5F7/1D1D1F?text=AI+Recommendation+Screen" alt="AI 功能展示">
+                    <img src="figs/Recipe_Creator.png" onerror="this.src='https://via.placeholder.com/600x600/F5F5F7/1D1D1F?text=3D+Custom+Recipe+Creator'" alt="创建器功能展示">
                 </div>
             </div>
         </section>
 
-        <!-- 第四屏：配方管理（黑底） -->
-        <section class="showcase-section dark">
+        <!-- 板块 2.5：配方管理系统（轻量灰底） -->
+        <section class="showcase-section" style="background:#f5f5f7; color:#1d1d1f;">
             <div class="showcase-content reveal">
                 <div class="showcase-text">
-                    <h3>你的私人，<br>赛博酒架。</h3>
-                    <p>建立专属的数字化存档。将经典酒谱与你的每一次灵感迸发完美归档。借助于现代化的 Web 全栈架构体系与极简的界面排版，跨设备间的查阅、编辑、云端检索都顺滑无比。一切信息，尽在你的指尖。</p>
+                    <span class="showcase-header-tag" style="color: #0071e3;">配方库引擎</span>
+                    <h3>秩序之美，<br>一览无余。</h3>
+                    <p>管理繁杂的酒谱从未如此轻松。无论是经典配方还是个人独创，一切都被井井有条地收纳在你的数字酒架中。</p>
+                    <ul>
+                        <li><strong>智能多维检索</strong>：支持按名称、创建者、甚至精准的酒精度范围快速筛选你所需的酒谱。</li>
+                        <li><strong>全览详情卡片</strong>：包含完整配料表、精准到每一步的教学说明和酒精度综合分析模块。</li>
+                        <li><strong>内置经典酒谱</strong>：附带庞大的初始配方库，包含从马提尼到血腥玛丽的传奇特调，随用随取。</li>
+                    </ul>
                 </div>
                 <div class="showcase-visual">
-                    <img src="https://via.placeholder.com/800x600/1C1C1E/FFFFFF?text=Recipe+Management+Screen" alt="管理功能展示" style="max-width: 100%;">
+                    <img src="figs/Recipe_Management.png" onerror="this.src='https://via.placeholder.com/600x600/E8E8ED/1D1D1F?text=Recipe+Management+UI'" alt="配方管理">
                 </div>
             </div>
         </section>
 
-        <!-- 底部 Call to action -->
-        <section class="showcase-section light" style="padding: 100px 20px; text-align: center; display: block;">
+        <!-- 板块 3：AI 推荐（黑底） -->
+        <section class="showcase-section dark">
+            <div class="showcase-content reverse reveal">
+                <div class="showcase-text">
+                    <span class="showcase-header-tag" style="color: #bc37ff;">AI大模型辅助</span>
+                    <h3>灵感枯竭？<br>交给智能大脑。</h3>
+                    <p>接入先进大语言模型的私人助理，为你的调酒创作注入革命性的生产力飞跃。</p>
+                    <ul>
+                        <li><strong>Deepseek 深度集成</strong>：原生接入强大 AI 模型。只需向系统报告你持有的手头酒品与果汁，即可秒级获得最契合的混合建议。</li>
+                        <li><strong>语义灵感引擎</strong>：不光是机械的原料拼凑，AI 会结合口味偏好与调酒理论，为你生成富有层次感的全新酒谱档案。</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="figs/AI_Recommendation.png" onerror="this.src='https://via.placeholder.com/600x600/1C1C1E/FFFFFF?text=Deepseek+AI+Assistance'" alt="AI功能展示">
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块 3.5：社交与互动生态（白底） -->
+        <section class="showcase-section light">
+            <div class="showcase-content reveal">
+                <div class="showcase-text">
+                    <span class="showcase-header-tag" style="color: #f56300;">社区互动网络</span>
+                    <h3>共享你的，<br>每一滴热爱。</h3>
+                    <p>这不是一座孤岛，而是一个由调酒爱好者、鉴赏家与创新者组成的活跃社区中心。</p>
+                    <ul>
+                        <li><strong>专属用户体系</strong>：构建个人档案，收藏你的最爱。所有的互动都将被沉淀为你的数字偏好卡。</li>
+                        <li><strong>多维互动评价</strong>：为每一杯特调打出分数，在评论区留下味蕾体验，与其他酿造者深度切磋。</li>
+                        <li><strong>个性化协同过滤</strong>：我们的统计算法会根据你的点赞、收藏级联检索其余用户的相同喜好，不断给你推新。</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="figs/Social_Ecosystem.png" onerror="this.src='https://via.placeholder.com/600x600/F5F5F7/1D1D1F?text=Social+Interaction+UI'" alt="社区功能展示">
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块 4：后台管理系统（白底） -->
+        <section class="showcase-section light">
+            <div class="showcase-content reverse reveal">
+                <div class="showcase-text">
+                    <span class="showcase-header-tag" style="color:#ff9500;">ADMIN DASHBOARD</span>
+                    <h3>幕后中枢，<br>掌控一切。</h3>
+                    <p>为管理员提供一处不可思议的控制中心。它兼具美观与强大，数据一目了然。</p>
+                    <ul>
+                        <li><strong>可视化统计面板</strong>：使用 Chart.js 构建的响应式图表，直观洞察用户偏好、配方增量以及访问趋势。</li>
+                        <li><strong>分级权限架构</strong>：完善的 RBAC 角色权限控制，保障生态的安全与秩序。</li>
+                        <li><strong>全域资源管理</strong>：从管理危险评论到清理错误配方档案，管理界面赋予核心权限极速操作的可能。</li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <img src="figs/Admin_Dashboard.png" onerror="this.src='https://via.placeholder.com/600x600/F5F5F7/1D1D1F?text=Admin+Dashboard+Charts'" alt="后台呈现" style="box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术栈汇总（全屏网格，黑底） -->
+        <section class="showcase-section dark" style="display: block; padding-top: 100px;">
+            <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+                <h3 style="font-size: 40px; font-weight: 600;">满载前沿技术。</h3>
+                <p style="color: #86868b; font-size: 18px;">为了极致的性能与顺滑的体验，我们选用的架构。</p>
+            </div>
+            <div class="feature-grid reveal">
+                <div class="feature-box">
+                    <h4>Node.js + Express.js</h4>
+                    <p>后端采用超轻量级无阻塞的事件驱动架构，为毫秒级的 API 响应奠定坚实基础。</p>
+                </div>
+                <div class="feature-box">
+                    <h4>MySQL 数据库</h4>
+                    <p>通过高性能的 MySQL2 驱动链接，稳健承载千万级的评论、用户偏好与复杂酒谱标签关联数据。</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Vanilla JS + Chart.js</h4>
+                    <p>不依赖笨重的前端框架以致代码臃肿，我们回归原生并使用现代 API 和渲染类库直接打造流畅的图表和 3D 转换体验。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部 CTA -->
+        <section class="showcase-section light" style="padding: 120px 20px; text-align: center; display: block;">
             <div class="reveal">
                 <h2 style="font-size: 48px; font-weight: 600; margin-bottom: 30px;">准备好开启调酒新宇宙了吗？</h2>
                 <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
@@ -233,7 +391,7 @@
         <p>Copyright &copy; 2026 Lancelot. 保留所有权利。</p>
     </footer>
 
-    <!-- 交叉观察器 (IntersectionObserver) : 控制滚动渐显动画 -->
+    <!-- 滚动渐显动画逻辑 -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = {
@@ -246,7 +404,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // 触发动画后解除观察，使其保持显示状态
                         observer.unobserve(entry.target);
                     }
                 });
