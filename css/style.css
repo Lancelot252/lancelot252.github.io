@@ -311,33 +311,68 @@ body {
     }
     
     .headline {
-        font-size: 40px;
+        font-size: 36px;
     }
-    
+
     .subhead {
-        font-size: 22px;
+        font-size: 20px;
     }
-    
+
+    .description {
+        font-size: 15px;
+    }
+
     .item-headline {
-        font-size: 32px;
+        font-size: 28px;
     }
-    
+
     .item-subhead {
-        font-size: 19px;
+        font-size: 18px;
     }
-    
+
     .nav-list {
-        display: none; /* 移动端可以隐藏 */
+        gap: 15px;
     }
     
+    .nav-list a {
+        font-size: 11px;
+    }
+
+    .cta-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .module {
+        padding-top: 40px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
     .footer-directory {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+}
+
+/* 更小屏幕适配 */
+@media (max-width: 480px) {
+    .global-nav-content {
+        padding: 0 10px;
+    }
+    .logo {
+        font-size: 16px;
+    }
+    .nav-list {
+        gap: 10px;
+    }
+    .nav-list a {
+        font-size: 10px;
     }
 }
