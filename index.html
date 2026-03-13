@@ -5,17 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lancelot - 个人主页</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* GitHub 仓库网格样式 */
+        .repo-section {
+            padding: 100px 20px;
+            background-color: #000;
+        }
+        .repo-section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .repo-section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 600;
+            color: #f5f5f7;
+            margin-bottom: 50px;
+            letter-spacing: -0.02em;
+        }
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .repo-card {
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            color: #f5f5f7;
+        }
+        .repo-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            background: #1a1a1c;
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        .repo-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .repo-name i {
+            font-size: 18px;
+            color: #fff;
+        }
+        .repo-desc {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 24px;
+            flex: 1;
+            line-height: 1.6;
+        }
+        .repo-meta {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            color: #86868b;
+            gap: 16px;
+        }
+        .lang-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
 </head>
 <body>
     <!-- 苹果风格的深色磨砂导航栏 -->
     <nav class="global-nav">
         <div class="global-nav-content">
-            <a href="#" class="logo"> Lancelot</a>
+            <a href="#" class="logo">Lancelot</a>
             <ul class="nav-list">
                 <li><a href="#flagship">旗舰项目</a></li>
                 <li><a href="about.html">关于我</a></li>
-                <li><a href="#more-projects">更多作品</a></li>
-                <li><a href="#contact">联系支持</a></li>
             </ul>
         </div>
     </nav>
@@ -33,8 +111,7 @@
                 </div>
             </div>
             <div class="module-image-wrapper">
-                <!-- 占位图：这里为你预留了 Cybar 项目的截图位置 -->
-                <img src="https://via.placeholder.com/1200x600/000000/FFFFFF?text=Cybar+App+Screenshot" alt="Cybar 界面截图">
+                <img src="figs/Cybar_Mega_Hero.png" alt="Cybar 界面截图" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">
             </div>
         </section>
 
@@ -45,71 +122,92 @@
                 <h3 class="subhead">热爱极简设计，专注极致性能。</h3>
                 <p class="description">熟悉 React, Vue, Node.js 等全栈技术。让每一行代码都如艺术品般优雅。</p>
                 <div class="cta-links">
-                    <a href="#">阅读我的简历 &gt;</a>
+                    <a href="about.html">阅读我的简历 &gt;</a>
                 </div>
             </div>
-            <div class="module-image-wrapper">
-                <img src="https://via.placeholder.com/1200x500/F5F5F7/333333?text=Developer+Working+Setup" alt="Developer Setup">
+            <div class="module-image-wrapper" style="display: flex; justify-content: center; align-items: center; padding: 40px 0;">
+                <img src="figs/SYSULogo.png" alt="SYSU Logo" style="max-width: 600px; width: 100%; height: auto; object-fit: contain;">
             </div>
         </section>
 
-        <!-- 其他项目网格 (两列网格，类似 iPad / Apple Watch 等副产品展示) -->
-        <section id="more-projects" class="module-grid">
-            <!-- 项目 A -->
-            <div class="grid-item item-dark">
-                <div class="item-content">
-                    <h4 class="item-headline">React Blog OS</h4>
-                    <p class="item-subhead">轻量，快速，Markdown 支持。</p>
-                    <div class="cta-links">
-                        <a href="#">在线预览 &gt;</a>
-                        <a href="#">GitHub &gt;</a>
-                    </div>
-                </div>
-                <div class="item-image-wrapper">
-                    <img src="https://via.placeholder.com/600x400/111111/FFFFFF?text=React+Blog+OS" alt="React Blog">
-                </div>
-            </div>
+        <!-- 开源与实验项目 (GitHub Repos) -->
+        <section class="repo-section" id="open-source">
+            <div class="repo-section-inner">
+                <h2 class="repo-section-title">开源与实验项目</h2>
+                <div class="repo-grid">
+                    
+                    <!-- Repo 1 -->
+                    <a href="https://github.com/Lancelot252/Cybar" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> Cybar</div>
+                        <div class="repo-desc">智能鸡尾酒配方管理与精确ABV计算平台前端引擎。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #f1e05a;"></span> JavaScript</span>
+                        </div>
+                    </a>
 
-            <!-- 项目 B -->
-            <div class="grid-item item-light">
-                <div class="item-content">
-                    <h4 class="item-headline">Vue Dashboard</h4>
-                    <p class="item-subhead">一切数据，尽在掌握。</p>
-                    <div class="cta-links">
-                        <a href="#">探索功能 &gt;</a>
-                    </div>
-                </div>
-                <div class="item-image-wrapper">
-                    <img src="https://via.placeholder.com/600x400/FAFAFA/111111?text=Vue+Dashboard" alt="Vue Dashboard">
-                </div>
-            </div>
+                    <!-- Repo 2 -->
+                    <a href="https://github.com/Lancelot252/Cybar_Harmony" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> Cybar_Harmony</div>
+                        <div class="repo-desc">Cybar 的鸿蒙 OS (HarmonyOS) 跨生态原生构建版本。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #3178c6;"></span> TypeScript</span>
+                        </div>
+                    </a>
 
-            <!-- 项目 C -->
-            <div class="grid-item item-light">
-                <div class="item-content">
-                    <h4 class="item-headline">Node CLI Tool</h4>
-                    <p class="item-subhead">终端里的生产力巨兽。</p>
-                    <div class="cta-links">
-                        <a href="#">获取文档 &gt;</a>
-                    </div>
-                </div>
-                <div class="item-image-wrapper">
-                    <img src="https://via.placeholder.com/600x400/FAFAFA/111111?text=Terminal+Screenshot" alt="Node CLI">
-                </div>
-            </div>
+                    <!-- Repo 3 -->
+                    <a href="https://github.com/Lancelot252/ROBOT-CAR" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> ROBOT-CAR</div>
+                        <div class="repo-desc">智能巡检机器人驱动算法与环境避障控制系统。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #3572A5;"></span> Python</span>
+                        </div>
+                    </a>
 
-            <!-- 联系方式 -->
-            <div id="contact" class="grid-item item-dark">
-                <div class="item-content">
-                    <h4 class="item-headline">准备好合作了吗？</h4>
-                    <p class="item-subhead">开启我们共同构建的下一个伟大项目。</p>
-                    <div class="cta-links">
-                        <a href="mailto:your@email.com">发一封邮件 &gt;</a>
-                        <a href="https://github.com/lancelot25252">关注我的 GitHub &gt;</a>
-                    </div>
-                </div>
-                <div class="item-image-wrapper">
-                    <img src="https://via.placeholder.com/600x400/111111/FFFFFF?text=Contact+Network" alt="Contact">
+                    <!-- Repo 4 -->
+                    <a href="https://github.com/Lancelot252/LaunchPad26" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> LaunchPad26</div>
+                        <div class="repo-desc">尝试还原重现极具质感的旧版经典 LaunchPad 交互体验。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #427819;"></span> Makefile</span>
+                        </div>
+                    </a>
+
+                    <!-- Repo 5 -->
+                    <a href="https://github.com/Lancelot252/SYSU_algorithm_practice" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> SYSU_algorithm_practice</div>
+                        <div class="repo-desc">中山大学算法分析与设计课程底层实践代码及探索集。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #f34b7d;"></span> C++</span>
+                        </div>
+                    </a>
+
+                    <!-- Repo 6 -->
+                    <a href="https://github.com/Lancelot252/LoveLetter" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> LoveLetter</div>
+                        <div class="repo-desc">基于 JavaScript 编写的经典桌游《情书》逻辑状态机。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #f1e05a;"></span> JavaScript</span>
+                        </div>
+                    </a>
+
+                    <!-- Repo 7 -->
+                    <a href="https://github.com/Lancelot252/Text-Search" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> Text-Search</div>
+                        <div class="repo-desc">跨平台快速文本搜索库与底层字符串模式匹配工具。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #427819;"></span> Makefile</span>
+                        </div>
+                    </a>
+
+                    <!-- Repo 8 -->
+                    <a href="https://github.com/Lancelot252/TicTacToeGame" target="_blank" class="repo-card">
+                        <div class="repo-name"><i class="fa-brands fa-github"></i> TicTacToeGame</div>
+                        <div class="repo-desc">极简交互体系下的终端/视窗跨端井字棋引擎。</div>
+                        <div class="repo-meta">
+                            <span class="meta-item"><span class="lang-dot" style="background-color: #3572A5;"></span> Python</span>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -119,45 +217,11 @@
     <footer class="global-footer">
         <div class="footer-content">
             <p class="footer-notes">
-                * 本网站的所有展示项目均为个人独立开发或参与开源贡献。<br>
-                * 界面灵感来自于 Apple (中国) 官方网站。仅用于个人能力展示，无任何商业用途。
+                * 本网站的所有展示项目均为个人独立开发。<br>
+                * 界面灵感来自于 Apple 官方网站。仅用于个人展示，无任何商业用途。
             </p>
-            <div class="footer-directory">
-                <div class="footer-column">
-                    <h3>项目矩阵</h3>
-                    <ul>
-                        <li><a href="#">全栈应用</a></li>
-                        <li><a href="#">前端组件库</a></li>
-                        <li><a href="#">后端微服务</a></li>
-                        <li><a href="#">UI 设计稿</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>技术栈</h3>
-                    <ul>
-                        <li><a href="#">JavaScript / TypeScript</a></li>
-                        <li><a href="#">React / Next.js</a></li>
-                        <li><a href="#">Vue / Nuxt.js</a></li>
-                        <li><a href="#">Node.js / Python</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>社交与联系</h3>
-                    <ul>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">掘金</a></li>
-                        <li><a href="#">知乎</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
                 <p>Copyright &copy; 2026 Lancelot. 保留所有权利。</p>
-                <ul class="footer-legal-links">
-                    <li><a href="#">隐私政策</a></li>
-                    <li><a href="#">使用条款</a></li>
-                    <li><a href="#">站点地图</a></li>
-                </ul>
             </div>
         </div>
     </footer>
